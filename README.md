@@ -1,13 +1,13 @@
 - Membuat environment baru
 
 ```
-Python -m venv env
+Python -m venv venv
 ```
 
 - Mengaktifkan environment
 
 ```
-\env\Scripts\activate #windows
+\venv\Scripts\activate #windows
 source venv/Scripts/activate # linux/macos
 ```
 
@@ -34,5 +34,4 @@ python -m ipykernel install --user --name=env --display-name "Python env"
 ```
 mlflow ui
 python Membangun_model/modelling.py
-python Membangun_model/modelling_tuning.py
 ```
