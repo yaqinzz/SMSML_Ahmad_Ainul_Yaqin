@@ -1,0 +1,21 @@
+# prometheus.yml
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'lung_cancer_model_api'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['app:8000']
+
+  - job_name: 'model_server'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['model-server:8080']
+
+  # Keep the host.docker.internal target for local development
+  - job_name: 'local_dev'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['host.docker.internal:8000']
